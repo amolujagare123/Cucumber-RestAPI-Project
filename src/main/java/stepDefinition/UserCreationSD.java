@@ -16,7 +16,7 @@ public class UserCreationSD {
     CreateUser ob;
     RequestSpecification req;
     RequestSpecification res;
-
+    Response response;
     @Given("Add User Payload for is created")
     public void add_user_payload_for_is_created() {
 
@@ -26,18 +26,18 @@ public class UserCreationSD {
 
         req = new RequestSpecBuilder()
                 .setBaseUri("https://reqres.in")
-                .addHeader("Content-Type", "application/json")
+                .addHeader("Content-Type", "application/json").setBody(ob) // body here optional
                 .build(); // given
 
         res=given().spec(req)
-                .body(ob);
+                /*.body(ob)*/;
 
     }
     @When("user calls {string} with {string} http request")
     public void user_calls_with_http_request(String reqName, String reqType) {
 
 
-        Response response = res.when().post("api/users"); // when
+         response = res.when().post("api/users"); // when
 
 
 
@@ -46,6 +46,8 @@ public class UserCreationSD {
     public void the_api_call_got_success_with_status_code(Integer statusCode) {
 
         ResponseSpecification resp = new ResponseSpecBuilder().expectStatusCode(statusCode).build();
+        String respStr = response.then().spec(resp).extract().response().asString();
 
+        System.out.println(respStr);
     }
 }
