@@ -25,7 +25,7 @@ public class UpdateChatUserSD {
     RequestSpecification request;
     RequestSpecification reqSpecBuilder;
     Response hitRequest;
-    @Given("^update User Payload for is created$")
+    /*@Given("^update User Payload for is created$")
     public void update_user_payload_for_is_created() throws Throwable {
 
 
@@ -33,7 +33,7 @@ public class UpdateChatUserSD {
         auth.setUserName("admin");
         auth.setPassword("admin123");
 
-         reqSpecBuilder = new RequestSpecBuilder()
+        reqSpecBuilder = new RequestSpecBuilder()
                 .setBaseUri("http://chat.cookingwithamol.in")
                 .addHeader("Content-Type", "application/json")
                 .setAuth(auth).build();
@@ -42,7 +42,7 @@ public class UpdateChatUserSD {
 
 
     }
-
+*/
     @When("^user calls UpdateUser with \"([^\"]*)\" http request$")
     public void user_calls_updateuser_with_something_http_request(String strArg1) throws Throwable {
 
@@ -53,7 +53,6 @@ public class UpdateChatUserSD {
 
     }
 
-
     @Then("^the update user API call got success with status code \"([^\"]*)\"$")
     public void the_update_user_api_call_got_success_with_status_code_something(String statusCode) throws Throwable {
         ResponseSpecification responseSpecBuilder
@@ -63,7 +62,7 @@ public class UpdateChatUserSD {
 
     }
 
-    @Then("^\"([^\"]*)\" should be \"([^\"]*)\";$")
+    /*@Then("^\"([^\"]*)\" should be \"([^\"]*)\";$")
     public void something_should_be_something(String jsonPath, String expectedValue)  {
 
         String responseStr = hitRequest.asString();
@@ -76,6 +75,6 @@ public class UpdateChatUserSD {
         System.out.println("actual="+actual);
 
         assertEquals("the value is different",expectedValue,actual);
-    }
+    }*/
 
 }

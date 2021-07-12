@@ -33,7 +33,7 @@ public class UserCreationSD {
                 /*.body(ob)*/;
 
     }
-    @When("user calls {string} with {string} http request")
+    /*@When("user calls {string} with {string} http request")
     public void user_calls_with_http_request(String reqName, String reqType) {
 
 
@@ -41,7 +41,7 @@ public class UserCreationSD {
 
 
 
-    }
+    }*/
     @Then("the API call got success with status code “{int}”")
     public void the_api_call_got_success_with_status_code(Integer statusCode) {
 
